@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <title>the takeaway</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="underscore-min.js"></script>
+    <script>$(function(){
+        $('#sorter').on('click', function(){
+            $('.paper').add('blockquote').each(function(){
+                var words = $(this).text().split(' ').sort();
+                $(this).text(words.join(' '));
+            });
+            return false;
+        });
+    });</script>
+</head>
+<body>
+<h1>the takeaway</h1>
+<p class='paper'>Digital media are, by nature, discrete: when you get down to the lowest-level representation of a digital work you can get, it's all individual bits, 1's and 0's.  By contrast, analog media are continuous.  Sounds can be represented by continuous wave functions.  Visual frame rates, so to speak, are only limited by the brain's processing ability.  Matter is only broken down into discrete particles because that's the smallest level it can currently be observed at.  Both the discrete and the continuous come with their own advantages and disadvantages, and one frequently gets converted to the other as input and output occur between users and computers.</p>
+
+<p class='paper'>However, this frequently stands at contrast with how readers actually interpret works.  For a given analysis, there is a smallest useful discrete quantity, both for analog and digital media.  I faced a dilemma in identifying these quantities when creating my objects.  I could certainly sort the bytes of an object, but the output would be garbage, meaningless in any non-mathematical sense.  The tools used to interpret the bytes into meaningful symbols would either display a garbled mess or simply output errors.  Instead, consider Paul's (2007) definition of a database:</p>
+
+<blockquote>A database essentially is a system that comprises the hardware that stores the data: the software that allows for housing the data in its respective container and for retrieving, filtering, and changing it, as well as the users who add a further level in understanding the data as information.</blockquote>
+
+<p class='paper'>If we consider a digital object to be a database of discrete elements that have a combined meaning, this system model gives us a framework for understanding different levels of discreteness as they change throughout the system into increasingly meaningful chunks.  This portfolio focused on manipulating those chunks from their original order into different, but still meaningful sequences through a process I call reflexive data visualization.</p>
+
+<p class='paper'>For instance, considering how to best implement #markov involved progressing through several of these levels.  As mentioned before, scrambling the bytes that compose the tweet would yield few meaningful results.  This left me with a few options for reordering data.  The software interprets the bytes into graphemes, either letters or punctuation.  Internalized linguistic systems allow me to group letters into syllables, syllables into words, words into parts of speech, and parts of speech (now bringing in the punctuation) into sentences if they are present.</p>
+
+<p class='paper'>Analyzing each of these levels allows us to draw different conclusions.  Looking at letters demonstrates frequencies of different letters in the words used by the subject of analysis; a subject that has already been analyzed (Mička, n.d.) and which I hypothesize would yield similar results were they the unit of analysis for a text program.  Syllables are a largely phonetic construct, and could be analyzed with the help of WordNet, but is of little interest regarding printed words.  Words are easy to analyze, since they have clearly defined starting and ending points, and have a stronger sense of meaning.  Parts of speech and sentences are even more meaningful, but since Twitter carries no methods to explicitly mark parts of speech and sentence meaning in a way a computer can understand, this analytical task becomes extremely difficult.</p>
+
+<p class='paper'>So, the process of finding a good unit for automated analysis of digital objects is a balancing act between meaning and computational accessibility.  Hence, going forward, the decisions to sort pixels, music beats, and voxels (cubes) in the other portfolio objects: they each represent a quantity that consists of enough bytes to be meaningful but are relatively computationally trivial to analyze.  The reordering of these units into a new form, whether relationally in the case of #markov, using linear sorting in pixel sorter and beat sorter, or flattening a three-dimensional form into a two-dimensional form in voxunravel, creates a data visualization that just consists of the data itself.</p>
+
+<p class='paper'>This unit is not always clear.  For instance, before creating voxunravel, I had created a manipulation of a voxel-based weather visualization project that reordered the data points being displayed.  However, upon reflection, it was clear that this was not a new representation of the voxel data, but merely a new representation of the weather data.  To make a reflexive data visualization, which can be used to great effect to show something about a data set using the data itself, properties of the data must be used in the output logic.</p>
+
+<p class='paper'>It's important to note here that despite the fact that all of these are derived from the same source composition (bytes), the units of analysis are vastly different.  Text, image, sound, and game engines are all observed and interacted with in different ways, in part by nature of the algorithms used to help interpret the data that they consist of.  From this it is clear that Cramer's (2001) assertion:</p>
+
+<blockquote>There actually is no such thing as digital media, but only digital information. Digital information becomes "media" only by the virtue of analog output; computer screens, loudspeakers, printers are analog output devices interfaced to the computer via digital-to-analog conversion hardware like video and sound cards or serial interfaces.</blockquote>
+
+<p class='paper'>is a half-truth.  It's true that everything just starts out as digital information, but without association with a medium, the information can't be considered part of a complete, useful system.  To Cramer, they're just numbers, and viewing them in that light ignores the significance of the computations that have to occur between the data store and the user to create a database system.</p>
+
+<p class='paper'>It's important to avoid assigning too much agency to data interpretation systems, though.  Galloway (2006) argues that protocols help describe digital information, saying "Protocols certainly <em>say</em> things about their contents...But do they actually know the meaning of their contents?"  And to a certain degree, protocols <em>do</em> know about their contents through the affordances built into the protocols.  A protocol designed for sending video data, for instance, will have different features and built-in assumptions from a streaming audio protocol.  But these understandings only go so far as to have content inform data handling, a lot of assembly, interpretation, and meaning is still left up to the viewer.</p>
+
+<p class='paper'>This is not to say that it is inconceivable for a computer to search for meaning in a digital work.  Natural language processing and other AI fields are focused on attempting to understand the meaning behind works, frequently using machine learning techniques to make increasingly accurate assessments regarding the meaning of an input phrase by receiving feedback about whether the meaning is correct or not and making dynamic adjustments to the algorithm used.  However, such techniques are still both largely imperfect and inaccessible to the amateur outside a package such as Siri or Google Now, which limit the user to specific applications.</p>
+
+<p class='paper'>However, without AI techniques, the computer's strength is the manipulation of discrete items that can be manipulated meaningfully with simple algorithms.  This ability rests comfortably within the domain of computers as well; the discrete nature of digital information lends it to grouping, whereas continuous analog data must be sliced before it can be analyzed.</p>
+
+<p class='paper'>Therefore, through reflexive data visualization, we can observe the affordances, algorithmic understanding, and aesthetics of digital information.  The full meaning of these visualizations is not realized until an interpreter, the user, enters the picture, but without the algorithms present the information is meaningless to the user.  Through this, the necessity of Paul's (2007) database definition to understanding digital information is demonstrated.</p>
+
+<h3>References</h3>
+<p>Cramer, F. (2001). Digital code and literary text. netzliteratur. Web.&lt;<a href="http://www.netzliteratur.net/cramer/digital_code_and_literary_text.html">http://www.netzliteratur.net/cramer/digital_code_and_literary_text.html</a>&gt;.</p>
+<p>Galloway, A. R. (2006). Protocol vs. Institutionalization. New media, old media: a history and theory reader, 187-198.</p>
+<p>Mička, P. (n.d.). Letter frequency (English). Algoritmy. Web.&lt;<a href="http://en.algoritmy.net/article/40379/Letter-frequency-English">http://www.netzliteratur.net/cramer/digital_code_and_literary_text.html</a>&gt;.</p>
+<p>Paul, C. (2004). The Database as System and Cultural Form: Anatomies of Cultural Narratives. Database Aesthetics. <em>Ed. Victoria Vesna: Minnesota Press, Forthcoming.</em></p>
+<p><a href="#" id="sorter">Sort paragraphs</p>
+</body>
+</html>
